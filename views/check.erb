@@ -1,0 +1,19 @@
+<table>
+  <thead>
+    <tr>
+      <% @data.headers.each do |title| %>
+        <th><%= title.to_s %></th>
+      <% end %>
+    </tr>
+  </thead>
+  <tbody>
+    <% @data.each do |person| %>
+      <tr>
+        <td><%= person['name'] %></td>
+        <td><%= person['ic'].tr('-','') %></td>
+        <td><a href="mailto:<%= person['email'] %>"><%= person['email'] %></a></td>
+        <td><%= person['tel'].tr(' ','').tr('-','') %></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
